@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">ShoeStoreUdacity</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login">Login</string>
+    <string name="email">E-mail</string>
+    <string name="password">Password</string>
+    <string name="register">Register</string>
+    <string name="login_by">Login By</string>
+    <string name="facebook">Facebook</string>
+    <string name="google">Google</string>
+    <string name="restore_password">Restore Password</string>
+    <string name="con">Continue</string>
+</resources>
