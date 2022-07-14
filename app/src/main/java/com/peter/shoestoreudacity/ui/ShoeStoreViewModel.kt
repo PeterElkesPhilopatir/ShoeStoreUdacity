@@ -17,6 +17,7 @@ class ShoeStoreViewModel @Inject constructor() : ViewModel() {
     private var _selectedShoes = MutableLiveData<Shoe>()
     val selectedShoes: LiveData<Shoe>
         get() = _selectedShoes
+    var shoeName = MutableLiveData<String>()
 
     init {
 
