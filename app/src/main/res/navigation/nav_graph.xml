@@ -13,16 +13,17 @@
         <action
             android:id="@+id/action_mainFragment_to_detailsFragment"
             app:destination="@id/detailsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <dialog
         android:id="@+id/detailsFragment"
         android:name="com.peter.shoestoreudacity.ui.details.DetailsFragment"
         android:label="fragment_details"
-        tools:layout="@layout/fragment_details" >
-        <argument
-            android:name="shoe"
-            app:argType="com.peter.shoestoreudacity.models.Shoe" />
-    </dialog>
+        tools:layout="@layout/fragment_details" />
     <fragment
         android:id="@+id/loginFragment"
         tools:layout="@layout/fragment_login"

@@ -12,4 +12,6 @@
     <string name="restore_password">Restore Password</string>
     <string name="con">Continue</string>
     <string name="shoe">Shoe</string>
+    <string name="save">Save</string>
+    <string name="logout">Logout</string>
 </resources>

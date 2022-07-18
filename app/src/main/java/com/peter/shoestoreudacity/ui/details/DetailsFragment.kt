@@ -6,7 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.peter.shoestoreudacity.R
 import com.peter.shoestoreudacity.databinding.FragmentDetailsBinding
@@ -25,13 +27,20 @@ class DetailsFragment : BottomSheetDialogFragment() {
         binding = FragmentDetailsBinding.inflate(inflater)
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.setSelected(DetailsFragmentArgs.fromBundle(requireArguments()).shoe)
+        binding.btnCancel?.setOnClickListener {
+            findNavController().popBackStack()
+        }
 
+        binding.btnSave?.setOnClickListener {
+            Toast.makeText(context!!, "Saving...", Toast.LENGTH_SHORT).show()
+        }
     }
+
 
 }
