@@ -18,6 +18,9 @@
             app:destination="@id/loginFragment"
             app:popUpTo="@id/loginFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_mainFragment_to_addShoeFragment"
+            app:destination="@id/addShoeFragment" />
     </fragment>
     <dialog
         android:id="@+id/detailsFragment"
@@ -53,4 +56,9 @@
             android:id="@+id/action_welcomeFragment_to_instructionsFragment"
             app:destination="@id/instructionsFragment" />
     </fragment>
+    <dialog
+        android:id="@+id/addShoeFragment"
+        android:name="com.peter.shoestoreudacity.ui.add_shoe.AddShoeFragment"
+        android:label="fragment_add_shoe"
+        tools:layout="@layout/fragment_add_shoe" />
 </navigation>

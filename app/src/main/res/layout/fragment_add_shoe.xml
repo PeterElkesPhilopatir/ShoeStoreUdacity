@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.peter.shoestoreudacity.ui.ShoeStoreViewModel" />
+    </data>
+    <!-- Details using ConstraintLayout-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_layout_shoename"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_14sdp"
+            android:layout_marginStart="@dimen/_28sdp"
+            android:layout_marginEnd="@dimen/_28sdp"
+            android:textColorHint="@color/gray"
+            app:boxStrokeErrorColor="@color/red"
+            app:endIconMode="custom"
+            app:endIconTint="@color/gray"
+            app:boxStrokeWidth="@dimen/_1sdp"
+            app:boxStrokeColor="@color/light_gray"
+            app:boxBackgroundColor="@color/white"
+            app:boxCornerRadiusBottomEnd="@dimen/_12sdp"
+            app:boxCornerRadiusBottomStart="@dimen/_12sdp"
+            app:boxCornerRadiusTopEnd="@dimen/_12sdp"
+            app:boxCornerRadiusTopStart="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_text_username"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Shoe"
+                android:inputType="text"
+                android:drawableStart="@drawable/ic_label"
+                android:drawablePadding="@dimen/_12sdp"
+                android:drawableTint="@color/gray"
+                android:padding="@dimen/_12sdp"
+                android:layout_gravity="center"
+                android:maxLength="50"
+                android:text="@={viewModel.selectedShoes.name}"
+                android:letterSpacing="0.05"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13ssp"
+                android:textColorHint="@color/gray" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_layout_company"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_14sdp"
+            android:layout_marginStart="@dimen/_28sdp"
+            android:layout_marginEnd="@dimen/_28sdp"
+            android:textColorHint="@color/gray"
+            app:boxStrokeErrorColor="@color/red"
+            app:endIconMode="custom"
+            app:endIconTint="@color/gray"
+            app:boxStrokeWidth="@dimen/_1sdp"
+            app:boxStrokeColor="@color/light_gray"
+            app:boxBackgroundColor="@color/white"
+            app:boxCornerRadiusBottomEnd="@dimen/_12sdp"
+            app:boxCornerRadiusBottomStart="@dimen/_12sdp"
+            app:boxCornerRadiusTopEnd="@dimen/_12sdp"
+            app:boxCornerRadiusTopStart="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_layout_shoename">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_text_company"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Company"
+                android:inputType="text"
+                android:drawableStart="@drawable/ic_label"
+                android:drawablePadding="@dimen/_12sdp"
+                android:drawableTint="@color/gray"
+                android:padding="@dimen/_12sdp"
+                android:layout_gravity="center"
+                android:maxLength="50"
+                android:text="@={viewModel.selectedShoes.company}"
+                android:letterSpacing="0.05"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13ssp"
+                android:textColorHint="@color/gray" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_layout_description"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_14sdp"
+            android:layout_marginStart="@dimen/_28sdp"
+            android:layout_marginEnd="@dimen/_28sdp"
+            android:textColorHint="@color/gray"
+            app:boxStrokeErrorColor="@color/red"
+            app:endIconMode="custom"
+            app:endIconTint="@color/gray"
+            app:boxStrokeWidth="@dimen/_1sdp"
+            app:boxStrokeColor="@color/light_gray"
+            app:boxBackgroundColor="@color/white"
+            app:boxCornerRadiusBottomEnd="@dimen/_12sdp"
+            app:boxCornerRadiusBottomStart="@dimen/_12sdp"
+            app:boxCornerRadiusTopEnd="@dimen/_12sdp"
+            app:boxCornerRadiusTopStart="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_layout_company">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_text_description"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Description"
+                android:inputType="text"
+                android:drawableStart="@drawable/ic_label"
+                android:drawablePadding="@dimen/_12sdp"
+                android:drawableTint="@color/gray"
+                android:padding="@dimen/_12sdp"
+                android:layout_gravity="center"
+                android:maxLength="50"
+                android:text="@={viewModel.selectedShoes.company}"
+                android:letterSpacing="0.05"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13ssp"
+                android:textColorHint="@color/gray" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_layout_price"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_14sdp"
+            android:layout_marginStart="@dimen/_28sdp"
+            android:layout_marginEnd="@dimen/_28sdp"
+            android:textColorHint="@color/gray"
+            app:boxStrokeErrorColor="@color/red"
+            app:endIconMode="custom"
+            app:endIconTint="@color/gray"
+            app:boxStrokeWidth="@dimen/_1sdp"
+            app:boxStrokeColor="@color/light_gray"
+            app:boxBackgroundColor="@color/white"
+            app:boxCornerRadiusBottomEnd="@dimen/_12sdp"
+            app:boxCornerRadiusBottomStart="@dimen/_12sdp"
+            app:boxCornerRadiusTopEnd="@dimen/_12sdp"
+            app:boxCornerRadiusTopStart="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_layout_description">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_text_price"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Price"
+                android:inputType="numberDecimal"
+                android:drawableStart="@drawable/ic_label"
+                android:drawablePadding="@dimen/_12sdp"
+                android:drawableTint="@color/gray"
+                android:padding="@dimen/_12sdp"
+                android:layout_gravity="center"
+                android:maxLength="50"
+                android:text="@={viewModel.selectedShoes.company}"
+                android:letterSpacing="0.05"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13ssp"
+                android:textColorHint="@color/gray" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_save"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn_cancel"
+            app:layout_constraintTop_toBottomOf="@id/text_layout_price"
+            android:layout_marginStart="@dimen/_24sdp"
+
+            android:layout_marginEnd="@dimen/_14sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            app:cornerRadius="@dimen/_24sdp"
+            app:strokeColor="@color/blue"
+            app:strokeWidth="@dimen/_1sdp"
+            app:backgroundTint="@color/white"
+            android:textAllCaps="false"
+            android:text="Save"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold"
+            android:paddingTop="@dimen/_6sdp"
+            android:paddingBottom="@dimen/_6sdp"
+            android:paddingStart="@dimen/_12sdp"
+            android:paddingEnd="@dimen/_12sdp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/btn_save"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_layout_price"
+            android:layout_marginEnd="@dimen/_24sdp"
+            android:layout_marginStart="@dimen/_14sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            app:cornerRadius="@dimen/_24sdp"
+            app:strokeColor="@color/red"
+            app:strokeWidth="@dimen/_1sdp"
+            app:backgroundTint="@color/white"
+            android:textAllCaps="false"
+            android:text="Cancel"
+            android:textColor="@color/red"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold"
+            android:paddingTop="@dimen/_6sdp"
+            android:paddingBottom="@dimen/_6sdp"
+            android:paddingStart="@dimen/_12sdp"
+            android:paddingEnd="@dimen/_12sdp"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -39,8 +39,9 @@ class MainFragment : Fragment() {
 
             binding.rvShoes.adapter = adapter
             adapter.submitList(it)
-
         }
+
+        binding.fabAdd.setOnClickListener { findNavController().navigate(MainFragmentDirections.actionMainFragmentToAddShoeFragment()) }
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -60,5 +61,4 @@ class MainFragment : Fragment() {
 
         return super.onOptionsItemSelected(item)
     }
-
 }

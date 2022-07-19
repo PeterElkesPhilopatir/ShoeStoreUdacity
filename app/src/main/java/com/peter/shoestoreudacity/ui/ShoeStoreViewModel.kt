@@ -10,18 +10,21 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ShoeStoreViewModel @Inject constructor() : ViewModel() {
-    private var _list = MutableLiveData<List<Shoe>>()
-    val list: LiveData<List<Shoe>>
+    private var _list = MutableLiveData<MutableList<Shoe>>()
+    val list: LiveData<MutableList<Shoe>>
         get() = _list
 
     private var _selectedShoes = MutableLiveData<Shoe>()
     val selectedShoes: LiveData<Shoe>
         get() = _selectedShoes
     var shoeName = MutableLiveData<String>()
+    private var _back = MutableLiveData<Boolean>()
+    val back: LiveData<Boolean>
+        get() = _back
 
     init {
-
-        _list.value = listOf(
+        _back.value = false
+        _list.value = mutableListOf(
             Shoe(
                 name = "Shoes 1",
                 size = 40.0,
@@ -48,5 +51,18 @@ class ShoeStoreViewModel @Inject constructor() : ViewModel() {
 
     fun setSelected(shoe: Shoe) {
         _selectedShoes.value = shoe
+    }
+
+    fun addShoe() {
+        try {
+            _list.value!!.add(_selectedShoes.value!!)
+            _back.value = true
+        } catch (e: Exception) {
+            _back.value = false
+        }
+    }
+
+    fun onBackDone() {
+        _back.value = false
     }
 }
