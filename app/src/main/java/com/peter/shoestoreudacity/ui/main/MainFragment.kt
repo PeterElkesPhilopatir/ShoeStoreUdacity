@@ -8,6 +8,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.peter.shoestoreudacity.R
 import com.peter.shoestoreudacity.databinding.FragmentMainBinding
+import com.peter.shoestoreudacity.databinding.RowShoeBinding
 import com.peter.shoestoreudacity.ui.ShoeStoreViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -29,16 +30,21 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.list.observe(viewLifecycleOwner) { it ->
-            val adapter = ShoesAdapter {
-                viewModel.setSelected(it!!)
-                findNavController().navigate(
-                    MainFragmentDirections.actionMainFragmentToDetailsFragment(
+//
+            it.forEach { item ->
+                val shoeRowShoeBinding = RowShoeBinding.inflate(layoutInflater)
+                shoeRowShoeBinding.data = item
+                shoeRowShoeBinding.root.setOnClickListener {
+                    viewModel.setSelected(item)
+                    findNavController().navigate(
+                        MainFragmentDirections.actionMainFragmentToDetailsFragment(
+                        )
                     )
-                )
+                }
+                binding.linearShoes.addView(shoeRowShoeBinding.root)
             }
 
-            binding.rvShoes.adapter = adapter
-            adapter.submitList(it)
+
         }
 
         binding.fabAdd.setOnClickListener { findNavController().navigate(MainFragmentDirections.actionMainFragmentToAddShoeFragment()) }
@@ -54,7 +60,7 @@ class MainFragment : Fragment() {
         //get item id to handle item clicks
         val id = item.itemId
         //handle item clicks
-        if (id == R.id.logout){
+        if (id == R.id.logout) {
             findNavController().navigate(MainFragmentDirections.actionMainFragmentToLoginFragment())
         }
 
